@@ -1,7 +1,7 @@
 -- I'm going to use postgresSQL in this project, but is you can use other
--- If you want to code in vscode you need to install the extension PostgresSQL and connect
--- Create a simple table
--- Put "DROP TABLE" in the begining, just in case
+-- If you want to code in vscode you need to install the extension SQLTools and connect
+-- Connect
+-- Put "DROP TABLE" in the begining
 DROP TABLE users
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
