@@ -1,7 +1,4 @@
--- I'm going to use postgresSQL in this project, but is you can use other
--- If you want to code in vscode you need to install the extension SQLTools and connect
--- Connect
--- Put "DROP TABLE" in the begining
+-- Create a simple table and add some informations
 DROP TABLE users
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -10,14 +7,12 @@ CREATE TABLE users (
     age INT,
     cration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
--- Put some informations in the table
 INSERT INTO users (user_name, email, age) 
 VALUES
     ('Tom', 'Tom@email.com', 27),
     ('Gus', 'Gus@email.com', 19),
     ('Alex', 'Alex@email.com', 31),
     ('Joe', 'Joe@email.com', 33);
--- Now select them using "SELECT" and select all using "*"
-SELECT * FROM users
--- Drop the table in the final line
-DROP TABLE users
+-- Now do a "Select" but telling what and where you want to select
+SELECT user_name FROM users
+
