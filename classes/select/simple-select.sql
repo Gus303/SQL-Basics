@@ -2,20 +2,22 @@
 -- If you want to code in vscode you need to install the extension PostgresSQL and connect
 -- Create a simple table
 -- Put "DROP TABLE" in the begining, just in case
-DROP TABLE clientes
-CREATE TABLE clientes (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
+DROP TABLE users
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    user_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    cidade VARCHAR(50) NOT NULL
+    age INT,
+    cration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 -- Put some elements in the table
-INSERT INTO clientes (nome, email, cidade) VALUES
-('Ana Souza', 'ana@email.com', 'São Paulo'),
-('Carlos Lima', 'carlos@email.com', 'Rio de Janeiro'),
-('Mariana Rocha', 'mariana@email.com', 'São Paulo'),
-('João Pedro', 'joao@email.com', 'Belo Horizonte');
+INSERT INTO users (user_name, email, age) 
+VALUES
+    ('Tom', 'Tom@email.com', 27),
+    ('Gus', 'Gus@email.com', 19),
+    ('Alex', 'Alex@email.com', 31),
+    ('Joe', 'Joe@email.com', 33);
 -- Now select them using "SELECT" and select all using "*"
-SELECT * FROM clientes
+SELECT * FROM users
 -- Drop the table in the final line
-DROP TABLE clientes
+DROP TABLE users
